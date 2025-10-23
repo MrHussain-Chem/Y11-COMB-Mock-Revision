@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y11 AQA Combined Chemistry Mock Exam Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .command-words-section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .command-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .command-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .command-word {
+            font-weight: bold;
+            color: #764ba2;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+        
+        .topic-section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .topic-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .topic-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .topic-header h2 {
+            font-size: 1.5em;
+        }
+        
+        .topic-content {
+            padding: 30px;
+            display: none;
+        }
+        
+        .topic-content.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .subsection {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .subsection h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .key-points {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .mark-scheme-lang {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #0c5460;
+        }
+        
+        .exam-tip {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #721c24;
+        }
+        
+        .revision-strategy {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #155724;
+        }
+        
+        .faq {
+            background: #e2e3e5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        strong {
+            color: #764ba2;
+        }
+        
+        .equation {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        
+        .toggle-icon.active {
+            transform: rotate(180deg);
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .topic-content {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Y11 AQA Combined Chemistry Mock Exam - HIGHER TIER</h1>
+            <p>Interactive Summary Sheet for Higher Combined Science Students - Paper 1 Topics</p>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #fff; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 10px;">
+                <strong>Topics covered:</strong> Atomic Structure & Periodic Table | Structure & Bonding (no metals/alloys) | Rates & Equilibria | Energy Changes (no extraction) | Using Resources<br/>
+                <strong>Calculations for this mock:</strong> Mr (Relative Formula Mass) and Ar (Relative Atomic Mass from isotopes) only
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Click on each topic heading to expand/collapse content</p>
+        </header>
+
+        <!-- Command Words Section -->
+        <div class="command-words-section">
+            <h2 style="color: #764ba2; margin-bottom: 20px; text-align: center;">📝 Command Words - Know What They Mean!</h2>
+            <div class="command-grid">
+                <div class="command-card">
+                    <div class="command-word">State/Give/Name</div>
+                    <div>Recall a fact, definition or equation. Short answer only - no explanation needed.</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-word">Describe</div>
+                    <div>Say what you see or what happens. DO NOT explain why. State observations or trends.</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-word">Explain</div>
+                    <div>State reasons WHY something happens. Use "because" to link cause and effect. More marks = more reasons.</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-word">Compare</div>
+                    <div>Write about BOTH things. State similarities AND differences. Must mention both to get marks.</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-word">Calculate</div>
+                    <div>Use numbers to work out answer. ALWAYS show working. Can get marks for method even if answer is wrong.</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-word">Suggest</div>
+                    <div>Apply your knowledge to new situation. Use scientific reasoning. There may be multiple correct answers.</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-word">Evaluate</div>
+                    <div>Consider evidence for AND against. Make a judgment. Give a conclusion based on the evidence.</div>
+                </div>
+                <div class="command-card">
+                    <div class="command-word">Plan</div>
+                    <div>Write a METHOD (not just equipment list). Include what you do, in order, and why.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Higher Tier Quantitative Chemistry Section -->
+        <div class="topic-section">
+            <div class="topic-header" onclick="toggleSection(this)">
+                <h2>HIGHER TIER ONLY: Quantitative Chemistry & Calculations</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="topic-content">
+                <div class="subsection">
+                    <h3>🧮 Essential Calculations for This Mock</h3>
+                    <div class="key-points">
+                        <p><strong>Calculating Mr (Relative Formula Mass):</strong></p>
+                        <p>Find the Mr of Ca(NO₃)₂</p>
+                        <ol>
+                            <li>Ca = 40</li>
+                            <li>N = 14 (× 2 = 28)</li>
+                            <li>O = 16 (× 6 = 96)</li>
+                            <li>Total Mr = 40 + 28 + 96 = 164</li>
+                        </ol>
+                        
+                        <p style="margin-top: 20px;"><strong>Calculating Ar from Isotopes (HT):</strong></p>
+                        <p>Chlorine has two isotopes: Cl-35 (75%) and Cl-37 (25%). Calculate the Ar.</p>
+                        <ol>
+                            <li>Ar = (mass × abundance) for each isotope, then divide by 100</li>
+                            <li>Ar = (35 × 75) + (37 × 25) ÷ 100</li>
+                            <li>Ar = (2625 + 925) ÷ 100</li>
+                            <li>Ar = 3550 ÷ 100 = 35.5</li>
+                        </ol>
+                        <p><strong>Remember:</strong> Always use values from periodic table, show working clearly!</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>🎯 Essential Higher Tier Calculations</h3>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Moles:</strong> n = m/Mr (moles = mass ÷ relative formula mass)</li>
+                            <li><strong>Avogadro's constant:</strong> 6.02 × 10²³ particles per mole</li>
+                            <li><strong>Concentration (mol/dm³):</strong> c = n/V (concentration = moles ÷ volume)</li>
+                            <li><strong>Converting units:</strong> 1 dm³ = 1000 cm³</li>
+                            <li><strong>Gas volumes:</strong> 1 mole of any gas = 24 dm³ at RTP</li>
+                            <li><strong>Percentage yield:</strong> (actual yield ÷ theoretical yield) × 100</li>
+                            <li><strong>Atom economy:</strong> (Mr of desired product ÷ sum of Mr of all products) × 100</li>
+                            <li><strong>Titration calculations:</strong> Using n₁V₁/a = n₂V₂/b</li>
+                            <li><strong>Limiting reactants:</strong> Identifying which reactant runs out first</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📐 Key Equations You MUST Memorise</h3>
+                    <div class="equation">n = m/Mr</div>
+                    <div class="equation">c = n/V (where V is in dm³)</div>
+                    <div class="equation">% yield = (actual/theoretical) × 100</div>
+                    <div class="equation">% atom economy = (Mr desired product/Mr all products) × 100</div>
+                    <div class="equation">For gases: V = n × 24 dm³ (at RTP)</div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📚 Mark Scheme Language for Calculations</h3>
+                    <div class="mark-scheme-lang">
+                        <ul>
+                            <li><strong>Relative atomic mass:</strong> "Weighted average mass of atoms of an element compared to 1/12th mass of carbon-12"</li>
+                            <li><strong>The mole:</strong> "Amount of substance containing 6.02 × 10²³ particles"</li>
+                            <li><strong>Limiting reactant:</strong> "The reactant that is completely used up first, determining the amount of product formed"</li>
+                            <li><strong>Why percentage yield less than 100%:</strong> "Incomplete reaction, side reactions, product lost during separation/purification"</li>
+                            <li><strong>Importance of high atom economy:</strong> "Less waste, more sustainable, more economically viable"</li>
+                            <li><strong>Titration endpoint:</strong> "Point where indicator changes colour permanently"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>⚠️ Common Higher Tier Calculation Errors</h3>
+                    <div class="exam-tip">
+                        <ul>
+                            <li><strong>Units:</strong> Always convert cm³ to dm³ by dividing by 1000</li>
+                            <li><strong>Mole ratios:</strong> Use balanced equation coefficients - if 2A → 3B, then 2 moles A gives 3 moles B</li>
+                            <li><strong>Significant figures:</strong> Match your answer to the least precise value in the question</li>
+                            <li><strong>Atom economy:</strong> Use Mr of ALL products (including waste), not just reactants</li>
+                            <li><strong>Titration:</strong> Average only concordant results (within 0.1 cm³)</li>
+                            <li><strong>Show ALL working:</strong> Even if calculator gives answer directly</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📝 Calculation Strategy</h3>
+                    <div class="revision-strategy">
+                        <ol>
+                            <li><strong>Step 1:</strong> Write down what you know (with units)</li>
+                            <li><strong>Step 2:</strong> Write down what you need to find</li>
+                            <li><strong>Step 3:</strong> Choose the correct equation</li>
+                            <li><strong>Step 4:</strong> Rearrange if necessary</li>
+                            <li><strong>Step 5:</strong> Substitute values (check units match)</li>
+                            <li><strong>Step 6:</strong> Calculate and include units in answer</li>
+                            <li><strong>Step 7:</strong> Check answer is sensible</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>❓ Higher Tier Calculation FAQs</h3>
+                    <div class="faq">
+                        <div class="faq-question">Q: How do I know when to use moles in a calculation?</div>
+                        <div>A: If the question involves reacting masses, concentrations, or gas volumes, you'll need moles as the connecting concept.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: What's the difference between percentage yield and atom economy?</div>
+                        <div>A: Yield compares actual vs theoretical amount of desired product. Atom economy compares desired product vs ALL products (shows efficiency of reaction design).</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: In titrations, why do we repeat until we get concordant results?</div>
+                        <div>A: To improve reliability and reduce random errors. Only concordant results (within 0.1 cm³) should be averaged.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 1: Atomic Structure and Periodic Table -->
+        <div class="topic-section">
+            <div class="topic-header" onclick="toggleSection(this)">
+                <h2>Topic 1: Atomic Structure and the Periodic Table</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="topic-content">
+                <div class="subsection">
+                    <h3>🎯 Most Important Content (High Exam Frequency)</h3>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Electronic structure:</strong> Must be able to write and draw for first 20 elements</li>
+                            <li><strong>Rutherford's gold foil experiment:</strong> Alpha particle scattering conclusions</li>
+                            <li><strong>Group 1 (Alkali metals):</strong> Trends in reactivity, observations with water</li>
+                            <li><strong>Group 7 (Halogens):</strong> Trends in reactivity, displacement reactions</li>
+                            <li><strong>Group 0 (Noble gases):</strong> Why unreactive, trends in boiling points</li>
+                            <li><strong>Transition metals:</strong> Properties compared to Group 1 metals</li>
+                            <li><strong>Development of atomic model:</strong> Dalton (solid spheres) → Thomson (plum pudding) → Rutherford (nuclear) → Bohr (electron shells)</li>
+                            <li><strong>Development of periodic table:</strong> Mendeleev's predictions, gaps left for undiscovered elements</li>
+                            <li><strong>Separation techniques:</strong> Filtration, crystallisation, distillation, chromatography</li>
+                            <li><strong>Isotopes:</strong> Definition and calculating relative atomic mass</li>
+                            <li><strong>Calculating relative atomic mass (Ar) (HT):</strong> Using isotope abundance</li>
+                            <li><strong>Calculating relative formula mass (Mr/RFM):</strong> Sum of relative atomic masses</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📚 Mark Scheme Language - Use These Exact Phrases!</h3>
+                    <div class="mark-scheme-lang">
+                        <ul>
+                            <li><strong>Atom:</strong> "The smallest part of an element that can exist"</li>
+                            <li><strong>Element:</strong> "A substance containing only one type of atom"</li>
+                            <li><strong>Compound:</strong> "Two or more elements chemically combined in fixed proportions"</li>
+                            <li><strong>Mixture:</strong> "Two or more elements or compounds not chemically combined"</li>
+                            <li><strong>Isotopes:</strong> "Atoms of the same element with same number of protons but different numbers of neutrons"</li>
+                            <li><strong>Dalton's model:</strong> "Atoms are solid, indivisible spheres; each element has identical atoms"</li>
+                            <li><strong>Thomson's plum pudding:</strong> "Ball of positive charge with negative electrons embedded throughout"</li>
+                            <li><strong>Rutherford's nuclear model:</strong> "Mass concentrated in small positive nucleus, electrons orbit in empty space"</li>
+                            <li><strong>Bohr model:</strong> "Electrons orbit nucleus in fixed energy levels/shells"</li>
+                            <li><strong>Rutherford's conclusions:</strong> "Most alpha particles passed straight through (atom mostly empty space), some deflected (positive charge concentrated in nucleus), few bounced back (nucleus very small but dense)"</li>
+                            <li><strong>Neutron discovery:</strong> "James Chadwick provided evidence that neutral particles (neutrons) exist in nucleus"</li>
+                            <li><strong>Mendeleev's periodic table:</strong> "Arranged by atomic mass but left gaps for undiscovered elements and swapped some elements to fit properties"</li>
+                            <li><strong>Modern periodic table:</strong> "Arranged by atomic number (number of protons)"</li>
+                            <li><strong>Filtration:</strong> "Separates insoluble solid from liquid"</li>
+                            <li><strong>Crystallisation:</strong> "Separates soluble solid from solution by evaporating solvent"</li>
+                            <li><strong>Distillation:</strong> "Separates liquids with different boiling points"</li>
+                            <li><strong>Chromatography:</strong> "Separates mixtures based on different solubilities in mobile/stationary phase"</li>
+                            <li><strong>Calculating Mr/RFM:</strong> "Add up all the relative atomic masses of atoms in the formula"</li>
+                            <li><strong>Calculating Ar from isotopes (HT):</strong> "Ar = Σ(isotope mass × % abundance) ÷ 100"</li>
+                            <li><strong>Group 1 reactivity:</strong> "Reactivity increases down the group because outer electron is further from nucleus, so less attraction, easier to lose"</li>
+                            <li><strong>Group 7 reactivity:</strong> "Reactivity decreases down the group because outer shell is further from nucleus, so less attraction for electrons, harder to gain"</li>
+                            <li><strong>Calculating Ar from isotopes (HT):</strong> "Ar = Σ(isotope mass × % abundance) ÷ 100"</li>
+                            <li><strong>Transition metals vs Group 1:</strong> "Transition metals: harder, stronger, higher melting points, less reactive, form colored compounds, can have different charges"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>⚠️ Top Tips from Examiner Reports</h3>
+                    <div class="exam-tip">
+                        <ul>
+                            <li>Many students confuse "atom" with "element" - an element contains many atoms!</li>
+                            <li>Common error with atomic models: Don't say Rutherford "discovered" the nucleus - he provided evidence for it</li>
+                            <li>Alpha scattering: Most went straight through (NOT all) - this shows atom is mostly empty space</li>
+                            <li>When describing Group 1 reactions, be specific: say "bubbles" not "gas produced"</li>
+                            <li>Electronic structures: Remember maximum electrons = 2,8,8 for GCSE</li>
+                            <li>Common error: Saying elements in same group have same number of electrons (they have same number of OUTER electrons)</li>
+                            <li>Always specify "outer shell" or "outermost shell" when discussing reactivity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📝 Revision Strategies</h3>
+                    <div class="revision-strategy">
+                        <ul>
+                            <li><strong>Flashcards:</strong> Create cards for element symbols, atomic numbers, electronic structures of first 20 elements, atomic model scientists and their discoveries</li>
+                            <li><strong>Mr/Ar practice:</strong> Calculate Mr for compounds like Ca(OH)₂, Na₂CO₃, Al₂(SO₄)₃</li>
+                            <li><strong>Isotope calculations (HT):</strong> Practice Ar calculations using isotope abundance data</li>
+                            <li><strong>Timeline practice:</strong> Draw timeline of atomic model development with key experiments</li>
+                            <li><strong>Summary sheets:</strong> Draw the periodic table from memory, add Group properties</li>
+                            <li><strong>Practice questions:</strong> Focus on Group 1 and 7 trend questions, transition metal comparisons</li>
+                            <li><strong>Visual learning:</strong> Draw atom diagrams showing protons, neutrons, electrons for different models</li>
+                            <li><strong>Memory technique:</strong> "Group number = outer electrons" (except Group 0)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    <div class="faq">
+                        <div class="faq-question">Q: How do I calculate relative atomic mass from isotope data? (HT)</div>
+                        <div>A: Multiply each isotope mass by its % abundance, add them all up, then divide by 100. E.g., Cl-35 (75%) and Cl-37 (25%): Ar = (35×75 + 37×25)/100 = 35.5</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: Why was Mendeleev's periodic table accepted even though some elements were in the wrong order by mass?</div>
+                        <div>A: His predictions about undiscovered elements were proved correct when they were found. Elements fitted better by properties than strict mass order.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: Why are noble gases unreactive?</div>
+                        <div>A: They have a full outer shell of electrons, so they don't need to gain, lose or share electrons.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: How do I remember which way reactivity goes in Groups 1 and 7?</div>
+                        <div>A: Group 1 LOSES electrons (easier when further from nucleus) - reactivity increases down. Group 7 GAINS electrons (harder when further from nucleus) - reactivity decreases down.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: Why did the atomic model change over time?</div>
+                        <div>A: New experimental evidence led to changes. Thomson discovered electrons (led to plum pudding). Rutherford's gold foil experiment showed nucleus exists (led to nuclear model). Further experiments showed electrons in shells (Bohr model).</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: What's the difference between mass number and relative atomic mass?</div>
+                        <div>A: Mass number = protons + neutrons (whole number for one atom). Relative atomic mass = average mass considering all isotopes (often decimal).</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 2: Structure and Bonding -->
+        <div class="topic-section">
+            <div class="topic-header" onclick="toggleSection(this)">
+                <h2>Topic 2: Structure and Bonding (excluding metals/alloys)</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="topic-content">
+                <div class="subsection">
+                    <h3>🎯 Most Important Content (High Exam Frequency)</h3>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Ionic bonding:</strong> Metal + non-metal, electron transfer, dot-cross diagrams</li>
+                            <li><strong>Covalent bonding:</strong> Non-metal + non-metal, electron sharing</li>
+                            <li><strong>Properties comparison:</strong> Ionic vs simple molecular vs giant covalent</li>
+                            <li><strong>Diamond vs Graphite vs Graphene:</strong> Structure and properties explanation</li>
+                            <li><strong>Fullerenes and nanotubes (HT):</strong> Structure, properties and uses</li>
+                            <li><strong>Polymers:</strong> Long chain molecules, intermolecular forces</li>
+                            <li><strong>Ionic formulae:</strong> Working out formulae using charges</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📚 Mark Scheme Language - Use These Exact Phrases!</h3>
+                    <div class="mark-scheme-lang">
+                        <ul>
+                            <li><strong>Ionic bonding:</strong> "Electrons transferred from metal atoms to non-metal atoms forming oppositely charged ions held together by electrostatic forces"</li>
+                            <li><strong>Covalent bonding:</strong> "Atoms share pairs of electrons"</li>
+                            <li><strong>Why ionic compounds conduct when molten/dissolved:</strong> "Ions are free to move and carry charge"</li>
+                            <li><strong>Why ionic compounds don't conduct when solid:</strong> "Ions are held in fixed positions in the lattice"</li>
+                            <li><strong>Why simple molecular substances have low melting points:</strong> "Weak intermolecular forces between molecules require little energy to overcome"</li>
+                            <li><strong>Why diamond is hard:</strong> "Each carbon atom forms 4 strong covalent bonds in a giant 3D structure"</li>
+                            <li><strong>Why graphite conducts:</strong> "Each carbon forms 3 bonds, leaving 1 delocalised electron per carbon that can move and carry charge"</li>
+                            <li><strong>Why graphene is strong:</strong> "Single layer of carbon atoms, each forming 3 strong covalent bonds in hexagonal structure"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>⚠️ Top Tips from Examiner Reports</h3>
+                    <div class="exam-tip">
+                        <ul>
+                            <li>Students often confuse intermolecular forces with covalent bonds - be clear about the difference!</li>
+                            <li>When explaining properties, always link structure → property with "because" or "so"</li>
+                            <li>Dot-cross diagrams: Only show outer shell electrons, use dots for one element, crosses for other</li>
+                            <li>Common mistake: Saying covalent bonds break when simple molecular substances melt (they don't!)</li>
+                            <li>Remember: High melting point = strong forces BETWEEN particles need breaking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📝 Revision Strategies</h3>
+                    <div class="revision-strategy">
+                        <ul>
+                            <li><strong>Comparison tables:</strong> Create a table comparing ionic, simple molecular, giant covalent properties</li>
+                            <li><strong>Flashcards:</strong> Ion charges for common elements (Na⁺, Mg²⁺, Cl⁻, O²⁻ etc.)</li>
+                            <li><strong>Practice drawing:</strong> Dot-cross diagrams for NaCl, MgO, H₂O, CO₂, NH₃</li>
+                            <li><strong>Memory aid:</strong> "METALS LOSE to become POSITIVE" (form cations)</li>
+                            <li><strong>3D models:</strong> Use molecular model kits or online simulations to visualize structures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    <div class="faq">
+                        <div class="faq-question">Q: How do I know if a substance is ionic or covalent?</div>
+                        <div>A: Look at the elements - metal + non-metal = ionic, non-metal + non-metal = covalent</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: Why doesn't water conduct electricity if it contains ions (H⁺ and OH⁻)?</div>
+                        <div>A: Pure water has very few ions. It only conducts well when ionic compounds dissolve in it.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: What's the difference between graphite and graphene?</div>
+                        <div>A: Graphite has many layers of carbon atoms, graphene is a single layer of carbon atoms.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 3: Rates of Reaction and Equilibria -->
+        <div class="topic-section">
+            <div class="topic-header" onclick="toggleSection(this)">
+                <h2>Topic 3: Rates of Reaction and Equilibria</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="topic-content">
+                <div class="subsection">
+                    <h3>🎯 Most Important Content (High Exam Frequency)</h3>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Collision theory:</strong> Particles must collide with sufficient energy (activation energy)</li>
+                            <li><strong>Factors affecting rate:</strong> Temperature, concentration, surface area, catalysts</li>
+                            <li><strong>Required practical:</strong> Effect of concentration on rate (sodium thiosulfate or Mg + HCl)</li>
+                            <li><strong>Measuring rate:</strong> Amount of reactant used or product formed ÷ time</li>
+                            <li><strong>Rate graphs:</strong> Gradient = rate (steeper = faster)</li>
+                            <li><strong>Reversible reactions:</strong> ⇌ symbol, examples like ammonium chloride</li>
+                            <li><strong>Le Chatelier's principle (HT):</strong> How equilibrium shifts with changes</li>
+                            <li><strong>Effect of conditions on equilibrium (HT):</strong> Temperature, pressure, concentration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📚 Mark Scheme Language - Use These Exact Phrases!</h3>
+                    <div class="mark-scheme-lang">
+                        <ul>
+                            <li><strong>Why temperature increases rate:</strong> "Particles move faster, more frequent collisions, more particles have energy ≥ activation energy"</li>
+                            <li><strong>Why concentration increases rate:</strong> "More particles in same volume, more frequent collisions"</li>
+                            <li><strong>Why surface area increases rate:</strong> "More particles exposed, more frequent collisions"</li>
+                            <li><strong>Catalyst definition:</strong> "Increases rate of reaction without being used up by providing alternative pathway with lower activation energy"</li>
+                            <li><strong>Equilibrium:</strong> "Rate of forward reaction equals rate of backward reaction"</li>
+                            <li><strong>Le Chatelier for temperature (HT):</strong> "If temperature increases, equilibrium shifts in endothermic direction to oppose the change"</li>
+                            <li><strong>Le Chatelier for pressure (HT):</strong> "If pressure increases, equilibrium shifts to side with fewer gas molecules"</li>
+                            <li><strong>Le Chatelier for concentration (HT):</strong> "If concentration of reactant increases, equilibrium shifts to right to use up added reactant"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>⚠️ Top Tips from Examiner Reports</h3>
+                    <div class="exam-tip">
+                        <ul>
+                            <li>Always mention BOTH frequency of collisions AND energy when explaining temperature effects</li>
+                            <li>Rate graphs: Remember rate is shown by gradient - the steeper the line, the faster the reaction</li>
+                            <li>Common error: Saying catalyst "speeds up" particles (it doesn't - it lowers activation energy)</li>
+                            <li>Practical write-ups must include: Independent, dependent and control variables</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📝 Revision Strategies</h3>
+                    <div class="revision-strategy">
+                        <ul>
+                            <li><strong>Graph practice:</strong> Draw and interpret rate graphs - identify fastest rate (steepest gradient)</li>
+                            <li><strong>Flashcards:</strong> Factors affecting rate with full explanations using collision theory</li>
+                            <li><strong>Understanding rate:</strong> How to measure rate and what affects it</li>
+                            <li><strong>Method writing:</strong> Practice writing full methods for rate practicals</li>
+                            <li><strong>Visual memory:</strong> Draw particle diagrams showing effect of each factor</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    <div class="faq">
+                        <div class="faq-question">Q: How do I know which way equilibrium shifts? (HT)</div>
+                        <div>A: System opposes the change - if you increase temperature, it shifts to decrease it (endothermic direction). If pressure increases, shifts to side with fewer gas molecules. If concentration increases, shifts to use up the added substance.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: What's the difference between rate and time?</div>
+                        <div>A: Rate is speed of reaction (high = fast). Time is duration (high = slow). They're inversely related.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: Do catalysts appear in the equation?</div>
+                        <div>A: No, they're written above the arrow because they're not used up.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 4: Energy Changes -->
+        <div class="topic-section">
+            <div class="topic-header" onclick="toggleSection(this)">
+                <h2>Topic 4: Energy Changes (excluding metals/extraction)</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="topic-content">
+                <div class="subsection">
+                    <h3>🎯 Most Important Content (High Exam Frequency)</h3>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Exothermic reactions:</strong> Release energy to surroundings (temperature rises)</li>
+                            <li><strong>Endothermic reactions:</strong> Take in energy from surroundings (temperature falls)</li>
+                            <li><strong>Required practical:</strong> Temperature changes - neutralisation and displacement</li>
+                            <li><strong>Reaction profiles:</strong> Drawing and interpreting energy diagrams</li>
+                            <li><strong>Bond breaking and making (HT):</strong> Breaking bonds requires energy, making bonds releases energy</li>
+                            <li><strong>Activation energy:</strong> Minimum energy for reaction to occur</li>
+                            <li><strong>Overall energy change:</strong> Difference between reactants and products</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📚 Mark Scheme Language - Use These Exact Phrases!</h3>
+                    <div class="mark-scheme-lang">
+                        <ul>
+                            <li><strong>Exothermic:</strong> "Energy transferred from reaction to surroundings"</li>
+                            <li><strong>Endothermic:</strong> "Energy transferred from surroundings to reaction"</li>
+                            <li><strong>Examples of exothermic:</strong> "Combustion, neutralisation, oxidation"</li>
+                            <li><strong>Examples of endothermic:</strong> "Thermal decomposition, citric acid + sodium hydrogen carbonate"</li>
+                            <li><strong>Breaking bonds:</strong> "Requires energy input (endothermic process)"</li>
+                            <li><strong>Making bonds:</strong> "Releases energy (exothermic process)"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>⚠️ Top Tips from Examiner Reports</h3>
+                    <div class="exam-tip">
+                        <ul>
+                            <li>Common confusion: Breaking bonds REQUIRES energy (endothermic process)</li>
+                            <li>Making bonds RELEASES energy (exothermic process)</li>
+                            <li>Reaction profiles: Products below reactants = exothermic, products above = endothermic</li>
+                            <li>Temperature practical: Use polystyrene cup for insulation, lid to reduce heat loss</li>
+                            <li>Remember: Temperature change shows energy transfer direction</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📝 Revision Strategies</h3>
+                    <div class="revision-strategy">
+                        <ul>
+                            <li><strong>Memory aid:</strong> "EXothermic = EXit" (energy exits to surroundings)</li>
+                            <li><strong>Practice drawing:</strong> Reaction profiles for both endo and exothermic reactions</li>
+                            <li><strong>Understanding bonds:</strong> Breaking bonds needs energy, making bonds releases energy</li>
+                            <li><strong>Practical revision:</strong> Write out full method for temperature change practical</li>
+                            <li><strong>Real-life examples:</strong> Hand warmers (exo), sports injury packs (endo)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    <div class="faq">
+                        <div class="faq-question">Q: Why is breaking bonds endothermic?</div>
+                        <div>A: Energy is needed to overcome the attractive forces holding atoms together.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: How do I remember which energy change is which?</div>
+                        <div>A: Exothermic = temperature goes up (releases heat). Endothermic = temperature goes down (absorbs heat).</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: What happens to energy in chemical reactions?</div>
+                        <div>A: Energy is conserved - it's transferred between the chemical store and thermal energy of surroundings.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 5: Using Resources -->
+        <div class="topic-section">
+            <div class="topic-header" onclick="toggleSection(this)">
+                <h2>Topic 5: Using Resources</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="topic-content">
+                <div class="subsection">
+                    <h3>🎯 Most Important Content (High Exam Frequency)</h3>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Finite and renewable resources:</strong> Definitions and examples</li>
+                            <li><strong>Potable water:</strong> Not pure, safe to drink, treatment methods</li>
+                            <li><strong>Required practical:</strong> Water purification by distillation</li>
+                            <li><strong>Waste water treatment:</strong> Screening, sedimentation, biological treatment</li>
+                            <li><strong>Life Cycle Assessment (LCA):</strong> Four stages - extraction, manufacture, use, disposal</li>
+                            <li><strong>LCA limitations (HT):</strong> Value judgements, subjective scoring, difficult to quantify some impacts</li>
+                            <li><strong>Reduce, Reuse, Recycle:</strong> Environmental and economic benefits</li>:</strong> Four stages - extraction, manufacture, use, disposal</li>
+                            <li><strong>LCA limitations (HT):</strong> Value judgements, subjective scoring, difficult to quantify some impacts</li>
+                            <li><strong>Reduce, Reuse, Recycle:</strong> Environmental and economic benefits</li>
+                            <li><strong>Alternative methods of extraction (HT):</strong> Phytomining, bioleaching</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📚 Mark Scheme Language - Use These Exact Phrases!</h3>
+                    <div class="mark-scheme-lang">
+                        <ul>
+                            <li><strong>Potable water:</strong> "Water that is safe to drink, contains low levels of dissolved salts and microbes"</li>
+                            <li><strong>Pure water (chemistry):</strong> "Contains only H₂O molecules, no dissolved substances"</li>
+                            <li><strong>Finite resource:</strong> "Being used up faster than it can be replaced"</li>
+                            <li><strong>Sustainable development:</strong> "Meeting current needs without compromising future generations"</li>
+                            <li><strong>Why recycle:</strong> "Conserves limited resources, reduces energy use, reduces landfill, reduces pollution"</li>
+                            <li><strong>LCA limitation:</strong> "Some aspects involve value judgements/opinions not measurable data"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>⚠️ Top Tips from Examiner Reports</h3>
+                    <div class="exam-tip">
+                        <ul>
+                            <li>Don't confuse potable with pure water - potable water is NOT chemically pure!</li>
+                            <li>Desalination: Remember it requires lots of energy (expensive)</li>
+                            <li>LCA questions: Consider ALL four stages, not just manufacture</li>
+                            <li>Practical: Distilled water should have NO dissolved solids (test with evaporation)</li>
+                            <li>Be specific about environmental impacts: "reduces CO₂ emissions" not just "better for environment"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📝 Revision Strategies</h3>
+                    <div class="revision-strategy">
+                        <ul>
+                            <li><strong>Flow diagrams:</strong> Draw water treatment and sewage treatment processes</li>
+                            <li><strong>LCA practice:</strong> Compare plastic vs paper bags considering all 4 stages</li>
+                            <li><strong>Flashcards:</strong> Key definitions - potable, finite, renewable, sustainable</li>
+                            <li><strong>Real examples:</strong> List finite (oil, metals) and renewable (wood, cotton) resources</li>
+                            <li><strong>Practical method:</strong> Write out distillation method step-by-step with diagram</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    <div class="faq">
+                        <div class="faq-question">Q: What's the difference between potable and pure water?</div>
+                        <div>A: Potable = safe to drink but contains some dissolved substances. Pure = only H₂O molecules.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: Why is recycling not always the best option?</div>
+                        <div>A: It can use energy, create pollution from transport, and some materials degrade when recycled.</div>
+                    </div>
+                    <div class="faq">
+                        <div class="faq-question">Q: How do I answer LCA questions?</div>
+                        <div>A: Consider extraction → manufacture → use → disposal for BOTH products being compared.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Revision Tips -->
+        <div class="topic-section">
+            <div class="topic-header" onclick="toggleSection(this)">
+                <h2>🎯 Final Exam Success Tips</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="topic-content">
+                <div class="subsection">
+                    <h3>✅ Day Before the Exam</h3>
+                    <div class="revision-strategy">
+                        <ul>
+                            <li>Review this summary sheet - focus on mark scheme language sections</li>
+                            <li>Go through command words one more time</li>
+                            <li>Check you have: Calculator, pen, pencil, ruler, rubber</li>
+                            <li>Get a good night's sleep - your brain needs rest to perform!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>📋 In the Exam - Higher Tier Specific Tips</h3>
+                    <div class="exam-tip">
+                        <ul>
+                            <li><strong>Read questions twice</strong> - underline command words and key terms</li>
+                            <li><strong>Check marks available</strong> - 3 marks = 3 points needed</li>
+                            <li><strong>Show ALL working</strong> - you can get method marks even if answer is wrong</li>
+                            <li><strong>Calculation strategy for Mr/Ar:</strong> Write equation → identify atoms → use periodic table → multiply by subscripts → add up</li>
+                            <li><strong>Use the data sheet</strong> - periodic table has relative atomic masses, don't guess</li>
+                            <li><strong>6-mark questions:</strong> 
+                                <ul>
+                                    <li>Plan your answer with bullet points first</li>
+                                    <li>Use scientific terminology throughout</li>
+                                    <li>Include relevant equations or calculations</li>
+                                    <li>Explain cause and effect with "because" or "therefore"</li>
+                                    <li>Check you've covered all aspects of the question</li>
+                                    <li>Aim for at least 6 distinct scientific points</li>
+                                </ul>
+                            </li>
+                            <li><strong>Mr and Ar calculations:</strong> 
+                                <ul>
+                                    <li>For Mr: List all elements, use periodic table for masses, multiply by subscripts, add up</li>
+                                    <li>For Ar from isotopes: (mass × abundance) for each, add them, divide by 100</li>
+                                    <li>Always show clear working even for simple calculations</li>
+                                    <li>Check your arithmetic - easy marks to lose through silly errors</li>
+                                </ul>
+                            </li>
+                            <li><strong>Practical questions:</strong> Consider resolution, precision, accuracy, reliability</li>
+                            <li><strong>Graph questions:</strong> Use more than half grid, label with units, draw line of best fit</li>
+                            <li><strong>If stuck:</strong> Move on and return later - prioritise marks per minute</li>
+                            <li><strong>Final check:</strong> Have you answered all parts? Are units correct?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>💡 Remember - Higher Tier Success</h3>
+                    <div class="key-points">
+                        <p style="text-align: center; font-size: 1.1em; padding: 20px;">
+                            <strong>Higher tier requires precision in language and depth in explanations.<br/>
+                            For calculations: Mr = sum of all Ar values. For isotopes: weighted average.<br/>
+                            Master the mark scheme language. Link concepts together.<br/>
+                            You've prepared well. Trust your knowledge. Show your working. You can achieve Grade 9! 💪</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.toggle-icon');
+            
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+        
+        // Auto-expand first section on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstSection = document.querySelector('.topic-content');
+            const firstIcon = document.querySelector('.toggle-icon');
+            if (firstSection) {
+                firstSection.classList.add('active');
+                firstIcon.classList.add('active');
+            }
+        });
+        
+        // Print-friendly version
+        window.addEventListener('beforeprint', function() {
+            const allSections = document.querySelectorAll('.topic-content');
+            allSections.forEach(section => {
+                section.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
